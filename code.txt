@@ -29,3 +29,12 @@ public:
         return gender;
     }
 };
+class Authorization {
+public:
+    static bool handleAuthorization() {
+        char choice;
+        cout << "Is Authorization Granted? (y/n): ";
+        cin >> choice;
+        return (choice == 'y' || choice == 'Y');
+    }
+};
