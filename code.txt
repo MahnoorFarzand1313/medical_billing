@@ -1,0 +1,31 @@
+class User {
+private:
+    string patientID;
+    string name;
+    int age;
+    string gender;
+
+public:
+    void setPatientInfo(string id, string n, int a, string g) {
+        patientID = id;
+        name = n;
+        age = a;
+        gender = g;
+    }
+
+    string getPatientID() {
+        return patientID;
+    }
+
+    string getName() {
+        return name;
+    }
+
+    int getAge() {
+        return age;
+    }
+
+    string getGender() {
+        return gender;
+    }
+};
