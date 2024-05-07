@@ -38,3 +38,13 @@ public:
         return (choice == 'y' || choice == 'Y');
     }
 };
+class Appointment {
+public:
+    static void handleAppointmentScheduling(string& details, string& remainder) {
+        cout << "Enter Appointment Details: ";
+        cin.ignore();
+        getline(cin, details);
+        cout << "Enter Remainder Method (SMS/Email): ";
+        getline(cin, remainder);
+    }
+};
