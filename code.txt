@@ -58,3 +58,14 @@ public:
         getline(cin, method);
     }
 };
+class MedicalHistory {
+public:
+    static void handleMedicalHistory(string& diag, string& treat, string& proc) {
+        cout << "Enter Diagnosis: ";
+        getline(cin, diag);
+        cout << "Enter Treatment: ";
+        getline(cin, treat);
+        cout << "Enter Procedures: ";
+        getline(cin, proc);
+    }
+};
