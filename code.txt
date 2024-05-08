@@ -48,3 +48,13 @@ public:
         getline(cin, remainder);
     }
 };
+class Billing {
+public:
+    static void handleBilling(double& balance, string& method) {
+        cout << "Enter Outstanding Balance: ";
+        cin >> balance;
+        cout << "Enter Payment Method: ";
+        cin.ignore();
+        getline(cin, method);
+    }
+};
