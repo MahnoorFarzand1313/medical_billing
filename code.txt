@@ -69,3 +69,60 @@ public:
         getline(cin, proc);
     }
 };
+int main() {
+    cout << "Welcome to Medical Billing System" << endl;
+
+    char addAnother;
+    do {
+        User user;
+        string id, name, gender;
+        int age;
+
+        cout << "Enter Patient ID: ";
+        cin >> id;
+        cout << "Enter Name: ";
+        cin.ignore();
+        getline(cin, name);
+        cout << "Enter Age: ";
+        cin >> age;
+        cout << "Enter Gender: ";
+        cin.ignore();
+        getline(cin, gender);
+
+        user.setPatientInfo(id, name, age, gender);
+
+        cout << "\nPatient ID: " << user.getPatientID() << endl;
+        cout << "Name: " << user.getName() << endl;
+        cout << "Age: " << user.getAge() << endl;
+        cout << "Gender: " << user.getGender() << endl;
+
+        // Authorization
+        bool authorization = Authorization::handleAuthorization();
+        cout << "Authorization Granted? " << (authorization ? "Yes" : "No") << endl;
+
+        // Appointment Scheduling
+        string appointmentDetails, remainderMethod;
+        Appointment::handleAppointmentScheduling(appointmentDetails, remainderMethod);
+        cout << "Appointment Details: " << appointmentDetails << endl;
+        cout << "Remainder Method: " << remainderMethod << endl;
+
+        // Billing
+        double outstandingBalance;
+        string paymentMethod;
+        Billing::handleBilling(outstandingBalance, paymentMethod);
+        cout << "Outstanding Balance: " << outstandingBalance << endl;
+        cout << "Payment Method: " << paymentMethod << endl;
+
+        // Medical History Records
+        string diagnosis, treatment, procedures;
+        MedicalHistory::handleMedicalHistory(diagnosis, treatment, procedures);
+        cout << "Diagnosis: " << diagnosis << endl;
+        cout << "Treatment: " << treatment << endl;
+        cout << "Procedures: " << procedures << endl;
+
+        cout << "Do you want to add another patient? (y/n): ";
+        cin >> addAnother;
+    } while (addAnother == 'y' || addAnother == 'Y');
+
+    return 0;
+}
