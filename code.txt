@@ -38,3 +38,34 @@ public:
         return (choice == 'y' || choice == 'Y');
     }
 };
+class Appointment {
+public:
+    static void handleAppointmentScheduling(string& details, string& remainder) {
+        cout << "Enter Appointment Details: ";
+        cin.ignore();
+        getline(cin, details);
+        cout << "Enter Remainder Method (SMS/Email): ";
+        getline(cin, remainder);
+    }
+};
+class Billing {
+public:
+    static void handleBilling(double& balance, string& method) {
+        cout << "Enter Outstanding Balance: ";
+        cin >> balance;
+        cout << "Enter Payment Method: ";
+        cin.ignore();
+        getline(cin, method);
+    }
+};
+class MedicalHistory {
+public:
+    static void handleMedicalHistory(string& diag, string& treat, string& proc) {
+        cout << "Enter Diagnosis: ";
+        getline(cin, diag);
+        cout << "Enter Treatment: ";
+        getline(cin, treat);
+        cout << "Enter Procedures: ";
+        getline(cin, proc);
+    }
+};
