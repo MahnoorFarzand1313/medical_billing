@@ -1,3 +1,9 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+// Class for User Roles and Permissions
 class User {
 private:
     string patientID;
